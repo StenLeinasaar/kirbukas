@@ -1,0 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace backend.Models{
+
+    public class ServiceResponse<T>{
+        public T? Data { get; set; }
+        public bool Success { get; set; } = true;
+        public string MEssage {get; set;} = string.Empty;
+    }
+}
