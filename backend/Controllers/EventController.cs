@@ -1,31 +1,21 @@
-using ToDoApp.Service;
-using ToDoApp.Dtos;
+
+using ToDoApp.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
-namespace ChatApp.Controllers{
+namespace ToDoApp.Controllers{
 
-    [Route("api/[Controller]")]
+    
     [ApiController]
-
-    public class ChatController : ControllerBase{
-        private readonly TaskService _taskService;
-
-        public ChatController(TaskService taskService){
-            _taskService = chatService;
-
-        }
+    [Route("api/[Controller]")]
+    public class TaskController : ControllerBase{
 
         [HttpGet("tasks")]
+        public IActionResult GetAllTasks(){
+        
 
-        public IActionResult GetAllTasks(Task model){
-            if(_chatService.AddUserToList(model.Name)){
-                //204 status code
-                return NoContent();
-            }
-
-            return BadRequest("This name is taken, please choose another name");
+            return Ok();
         }
 
     }
